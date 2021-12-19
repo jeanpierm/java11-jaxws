@@ -1,0 +1,8 @@
+com\jm\demo\client\GetCountryResponse.class
+com\jm\demo\client\CountriesPort.class
+com\jm\demo\client\Currency.class
+com\jm\demo\client\Country.class
+com\jm\demo\client\GetCountryRequest.class
+com\jm\demo\client\CountriesPortService.class
+com\jm\demo\client\package-info.class
+com\jm\demo\client\ObjectFactory.class
