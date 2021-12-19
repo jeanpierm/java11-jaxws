@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+                  xmlns:types="http://spring.io/guides/gs-producing-web-service/types"
                   targetNamespace="http://spring.io/guides/gs-producing-web-service">
 
     <wsdl:types>
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-                   targetNamespace="http://spring.io/guides/gs-producing-web-service">
-            <xs:import namespace="http://spring.io/guides/gs-producing-web-service"
-                       schemaLocation="Countries.xsd"/>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:import namespace="http://spring.io/guides/gs-producing-web-service/types"
+                       schemaLocation="GetCountrySchema.xsd"/>
         </xs:schema>
     </wsdl:types>
 
     <wsdl:message name="getCountryResponse">
-        <wsdl:part element="tns:getCountryResponse" name="getCountryResponse"/>
+        <wsdl:part element="types:getCountryResponse" name="getCountryResponse"/>
     </wsdl:message>
     <wsdl:message name="getCountryRequest">
-        <wsdl:part element="tns:getCountryRequest" name="getCountryRequest"/>
+        <wsdl:part element="types:getCountryRequest" name="getCountryRequest"/>
     </wsdl:message>
 
     <wsdl:portType name="CountriesPort">
@@ -30,7 +29,7 @@
     <wsdl:binding name="CountriesPortSoap11" type="tns:CountriesPort">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="getCountry">
-            <soap:operation soapAction=""/>
+            <soap:operation soapAction="http://spring.io/guides/gs-producing-web-service/getCountry"/>
             <wsdl:input name="getCountryRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
